@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>frm-meveo</artifactId>
+		<groupId>com.drone</groupId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>meveo-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>meveo-ear</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.drone</groupId>
+			<artifactId>meveo-dto</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.drone</groupId>
+			<artifactId>meveo-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.drone</groupId>
+			<artifactId>meveo-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.drone</groupId>
+			<artifactId>meveo-service</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.drone</groupId>
+			<artifactId>meveo-web</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10.1</version>
+				<configuration>
+					<version>7</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<webModule>
+							<groupId>com.drone</groupId>
+							<artifactId>meveo-web</artifactId>
+							<contextRoot>/meveo</contextRoot>
+						</webModule>
+
+						<ejbModule>
+							<groupId>com.drone</groupId>
+							<artifactId>meveo-service</artifactId>
+						</ejbModule>
+
+					</modules>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

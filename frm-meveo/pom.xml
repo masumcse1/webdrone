@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.drone</groupId>
+		<artifactId>webdrone</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>frm-meveo</artifactId>
+	<packaging>pom</packaging>
+
+
+	<modules>
+		<module>meveo-dto</module>
+		<module>meveo-api</module>
+		<module>meveo-model</module>
+		<module>meveo-web</module>
+		<module>meveo-service</module>
+		<module>meveo-ear</module>
+	</modules>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version>11</java-version>
+
+		<jakarta.platform-version>8.0.0</jakarta.platform-version>
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>jakarta.platform</groupId>
+				<artifactId>jakarta.jakartaee-web-api</artifactId>
+				<version>${jakarta.platform-version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<finalName>meveo</finalName>
+		<pluginManagement>
+			<plugins>
+
+
+				<plugin>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>3.0.1</version>
+					<configuration>
+						<ejbVersion>3.2</ejbVersion>
+					</configuration>
+				</plugin>
+
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>
