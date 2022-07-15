@@ -64,6 +64,30 @@
 				</plugin>
 
 
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.10.1</version>
+					<configuration>
+						<version>7</version>
+						<defaultLibBundleDir>lib</defaultLibBundleDir>
+						<modules>
+							<webModule>
+								<groupId>com.drone</groupId>
+								<artifactId>meveo-web</artifactId>
+								<contextRoot>/meveo</contextRoot>
+							</webModule>
+
+							<ejbModule>
+								<groupId>com.drone</groupId>
+								<artifactId>meveo-service</artifactId>
+							</ejbModule>
+
+						</modules>
+					</configuration>
+				</plugin>
+
+
 			</plugins>
 		</pluginManagement>
 	</build>
