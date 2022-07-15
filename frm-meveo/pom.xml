@@ -47,8 +47,14 @@
 		<finalName>meveo</finalName>
 		<pluginManagement>
 			<plugins>
-
-
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.2.3</version>
+				</plugin>
 				<plugin>
 					<artifactId>maven-ejb-plugin</artifactId>
 					<version>3.0.1</version>

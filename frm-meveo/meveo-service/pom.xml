@@ -8,13 +8,13 @@
 	</parent>
 	<artifactId>meveo-service</artifactId>
 	<packaging>ejb</packaging>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>jakarta.platform</groupId>
@@ -42,23 +42,18 @@
 		</dependency>
 
 	</dependencies>
-	
+
 	<build>
 
 		<plugins>
 			<plugin>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.8.1</version>
-				</plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
 			<plugin>
-					<artifactId>maven-ejb-plugin</artifactId>
-					<version>3.0.1</version>
-					<configuration>
-						<ejbVersion>3.2</ejbVersion>
-					</configuration>
-				</plugin>
+				<artifactId>maven-ejb-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
-	
-	
+
+
 </project>
